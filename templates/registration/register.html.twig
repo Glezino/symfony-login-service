@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+
+    <form method="post">
+        {% if form_errors(registrationForm) %}
+            <div class="alert alert-danger" role="alert">
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
+
+        <div class="form-group">
+            {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_row(registrationForm.plainPassword, {
+                'label': 'Password',
+                'attr': {'class': 'form-control', 'placeholder': 'Password'}
+            }) }}
+        </div>
+
+        <div class="form-group form-check">
+            {{ form_row(registrationForm.agreeTerms, {'label_attr': {'class': 'form-check-label'}, 'attr': {'class': 'form-check-input'}}) }}
+            <label class="form-check-label" for="{{ registrationForm.agreeTerms.vars.id }}"></label>
+        </div>
+
+        {{ form_widget(registrationForm._token) }} {# Agregar el campo del token CSRF #}
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+{% endblock %}
