@@ -26,7 +26,7 @@ This back-end project developed with Symfony aims to provide a microservice for 
 
 1. Clone the repository.
 2. Run `composer install` to install dependencies.
-3. Configure your `.env` file with database settings and JWT keys.
+3. Configure your `.env` file with database settings, JWT keys and MAILER_DSN.
 4. Update the database schema using `php bin/console doctrine:schema:update --force`.
 5. Navigate to `src/service/mailer.php` and `src/Controller/EmailController.php` to set up mailing functionalities.
 6. Use the provided routes for registration, login, user listing, password reset, and API endpoints.
