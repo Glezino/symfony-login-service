@@ -40,9 +40,9 @@ This back-end project developed with Symfony aims to provide a microservice for 
 | /user              | GET    | Admin users access allowed           | List of users                   |
 | /reset-password    | GET    | Password reset                       | For all users (not configured)  |
 | API Routes         |        |                                      |                                 |
-| /api/register      | POST   | Open                                 | Create user with token          |
+| /apiregister      | POST   | Open                                 | Create user with token          |
 | /api/login_check   | POST   | Open                                 | Send username and password, returns a token |
-| /api/check         | POST   | Token check                          | Restricted to users with token  |
-| /api/check_info    | POST   | Token information                    | Restricted to users with token  |
+| /apicheck         | POST   | Token check                          | Restricted to users with token  |
+| /apicheck_info    | POST   | Token information                    | Restricted to users with token  |
 
 This back-end project will provide a solid foundation for user management in the web application, ensuring secure authentication, route protection, and efficient user data management in the database.
