@@ -12,7 +12,7 @@ class EmailController extends AbstractController
     #[Route('/email', name: 'app_email')]
     public function index(Mailer $mailer): JsonResponse
     {
-        $mailer->sendEmail("justamailer0@gmail.com", "Prueba" );
+        $mailer->sendEmail("###@gmail.com", "Prueba" );
         return $this->json([
             'message' => 'Mensaje enviado!',
         ]);
@@ -21,7 +21,7 @@ class EmailController extends AbstractController
     #[Route('/email-welcome', name: 'app_emailwelcome')]
     public function welcome(Mailer $mailer): JsonResponse
     {
-        $mailer->sendEmail("justamailer0@gmail.com", "Bienvenido!");
+        $mailer->sendEmail("###@gmail.com", "Bienvenido!");
         return $this->json([
             'message' => 'Mensaje de welcome!',
         ]);
